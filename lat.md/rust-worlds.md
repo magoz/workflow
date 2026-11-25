@@ -71,6 +71,8 @@ Use each backend to validate the shared architecture through a complete implemen
 
 SQLite establishes the first Rust World, including its storage semantics, execution delivery, recovery and streams. Its first public TS SDK integration requires the complete World surface promised for that backend.
 
+The private [[packages/world-sqlite-rust/src/lib.rs#create_world|Node binding]] is exposed through a [[packages/world-sqlite-rust/package.json|generated ESM loader]] and currently returns a placeholder World; its [[packages/world-sqlite-rust/test/spec.test.ts|initialization test]] verifies SDK loading and protocol rejection, while SQLite operations and World behavior remain unimplemented.
+
 Use [[packages/world-local/src/index.ts#createWorld]] and its current tests as the behavioral reference. The existing implementation stores state in SQLite and queues work in memory; [[packages/world-local/README.md]] explains that distinction. Moving storage alone is an internal milestone, not completion of the Rust World.
 
 Implement database open/migrations and codecs, reads, transactional event writes, streams, then delivery/recovery and lifecycle in coherent slices. An accepted event and all affected projections commit together. Preserve slot allocation, idempotency, hook ownership and resume deduplication, fences, pagination, retention, tag scoping and capability semantics relevant to the supported run formats.
