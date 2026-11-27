@@ -1,5 +1,15 @@
 # @workflow/core
 
+## 5.8.1
+
+### Patch Changes
+
+- [#5682](https://github.com/vercel/workflow/pull/5682) [`a306cb1`](https://github.com/vercel/workflow/commit/a306cb1455e55e6407ca80e1bb06da5b983781b4) Thanks [@pranaygp](https://github.com/pranaygp)! - Decode a legacy unframed abort packet once per pause in the stream instead of once per chunk read.
+
+- [#5699](https://github.com/vercel/workflow/pull/5699) [`294de1b`](https://github.com/vercel/workflow/commit/294de1bc328280b06e345378fae9788d9b44184d) Thanks [@ruiconti](https://github.com/ruiconti)! - Deliver events such as hook resumes to a run whose inline step is still running past the invocation's inline budget.
+- Updated dependencies [[`9da279d`](https://github.com/vercel/workflow/commit/9da279d38f37ff0e62f4d4e10c1b6ea4406eeb20)]:
+  - @workflow/world-vercel@5.8.1
+
 ## 5.8.0
 
 ### Minor Changes
